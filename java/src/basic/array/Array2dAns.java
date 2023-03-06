@@ -1,6 +1,6 @@
 package basic.array;
 
-import java.util.Arrays;
+
 
 public class Array2dAns {
 
@@ -32,14 +32,6 @@ public class Array2dAns {
 			idx++;
 		}
 		System.out.println();
-		
-		for(int i=0; i<subName.length;i++) {
-			int total =0;
-			for(int j=0;j<stuName.lengtg;j++) {
-				total+=score[j][i];
-			}
-			double avg = (double)/stuName.length;
-		}
 		
 		
 		double classAvg = totalAvg / stuName.length;
