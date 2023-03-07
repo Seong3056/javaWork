@@ -44,4 +44,11 @@ public class Calculator {
 	return (double)(x+y)*h/2;	
 	}
 
+//	double cal(int m,int x, int y, int h,) {
+//		//3,4,5,ㅇ,
+//		
+//		switch(m) {
+//		
+//		}
+//	}
 }

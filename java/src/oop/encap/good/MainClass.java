@@ -12,9 +12,6 @@ public class MainClass {
 		else
 		System.out.printf("내 생일은 %d년 %d월 %d일입니다.\n",
 				my.getYear("abc1234"),my.getMonth(),my.getDay());
-		
-		
-
 	}
 
 }

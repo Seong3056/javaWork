@@ -1,5 +1,7 @@
 package oop.overloading;
 
+import java.util.Scanner;
+
 public class MainClass {
 
 	public static void main(String[] args) {
@@ -23,7 +25,10 @@ public class MainClass {
 		System.out.println(b);
 		c = s.calcRectArea(5,13,7);
 		System.out.println(c);
-		
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+		System.out.println(Math.tan(Math.PI/180*45)*x*x*4);
+		// 
 
 	}
 
