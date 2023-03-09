@@ -11,6 +11,13 @@ public class MainClass {
 //		Singleton s1 = Singleton.s;
 //		Singleton.s = null;
 		
+		/*
+		 private 외부에서 객체에 접근하지 못하게 설정
+   		 static  선언한 Singleton을 전역으로 쓰이게 설정
+   		 
+   		 getInstance 선언한 new Singleton을 불러올수 있도록 하는 함수
+		 */
+		
 		Singleton s1 = Singleton.getInstance();
 		Singleton s2 = Singleton.getInstance();
 		Singleton s3 = Singleton.getInstance();

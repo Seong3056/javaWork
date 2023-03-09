@@ -1,6 +1,6 @@
 package oop.abs.quiz;
 
-import java.util.Scanner;
+
 
 public class MainClass {
 
@@ -19,22 +19,14 @@ public class MainClass {
         - MainClass에서 길이가 5인 정사각형,
          반지름이 4인 원의 모든 내용을 호출해 보세요.
         */
-		Scanner sc = new Scanner(System.in);
-		System.out.print("사각형의 이름: ");
-		String s_name = sc.next();
-		System.out.print("사각형의 변: ");
-		int s_x = sc.nextInt();
-			
-		System.out.print("원의 이름: ");
-		String c_name = sc.next();
-		System.out.print("원의 변: ");
-		int c_r = sc.nextInt();
 		
-		Shape square = new Rect(s_name,s_x);
+		Shape square = new Rect("정사각형",5);
 		System.out.printf("%s의 넓이는 %.0f입니다.\n",square.getName(),square.getArea());
 		
-		Shape circle = new Circle(c_name, c_r);
+		Shape circle = new Circle("원", 4);
 		System.out.printf("%s의 넓이는 %.1f입니다.\n",circle.getName(),circle.getArea());
+		
+		
 		
 		
 

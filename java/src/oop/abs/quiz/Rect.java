@@ -12,7 +12,7 @@ public class Rect extends Shape {
 		this.x = x;
 	}
 	@Override
-	double getArea() {
-		return x * rex;
+	public	double getArea() {
+		return x * x;
 	}
 }

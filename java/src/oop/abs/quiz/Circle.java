@@ -1,20 +1,14 @@
 package oop.abs.quiz;
 
 public class Circle extends Shape {
-	int r;
-	double c_area;
-	double c_cir ;
-	
-	public Circle(String name) {
-		super(name);
-	}
+	int r;	
 	
 	public Circle(String name,int r) {
 		super(name);
 		this.r = r;		
 	}
 	@Override
-	double getArea() {
+	public double getArea() {
 		return Math.PI * r * r;
 	}
 	
