@@ -19,12 +19,13 @@ public class Score {
 //	private int total;
 //	private double avg;
 	
+	public Score() {}	// 생성자 선언 @@@@@@@@@@@@@
 
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) throws Exception {
-		if(name.equals("그만")) throw new NullPointerException();
+		if(name.equals("그만")) throw new InterruptedException();
 		this.name = name;
 	}
 	public int getKor() {
@@ -47,13 +48,13 @@ public class Score {
 	}
 	
 	public int getTotal() {
-		return kor+eng+math;
+		return kor + eng + math;
 	}	
 	public double getAvg() {
-		return (kor+eng+math)/3.0;
+		return (kor + eng + math)/3.0;
 	}	
 	public void scoreInfo() {
-		if(getName()==null) throw new ArithmeticException();
+		if(getName()==null) throw new NullPointerException();
 		System.out.printf("이름: %s 국어: %d 영어: %d 수학: %d 총점: %d 평균: %.1f\n",name,kor,eng,math,getTotal(),getAvg());
 	}
 	

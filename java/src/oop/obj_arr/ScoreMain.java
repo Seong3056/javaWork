@@ -44,12 +44,14 @@ public class ScoreMain {
 
 					System.out.print("수학: ");
 					s[i].setMath(sc.nextInt());
+					
+					System.out.println("-----------");
 				}
 				catch (InputMismatchException e) {
 					System.out.println("올바른 값을 입력하세요.");
 					sc.nextLine();
 					continue input;}
-				catch (NullPointerException e) {
+				catch (InterruptedException e) {
 					System.out.println("입력을 종료합니다.");
 					break;}
 				catch (Exception e) {
@@ -63,7 +65,7 @@ public class ScoreMain {
 		}
 			
 			
-		catch (ArithmeticException e) {
+		catch (NullPointerException e) {
 			break f;
 		}
 
