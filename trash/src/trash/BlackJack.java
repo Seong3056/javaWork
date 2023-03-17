@@ -29,11 +29,42 @@ public class BlackJack {
 
 		return c;
 	}
+	public static int getPattern(String p,int index) {
+		int x=0;
+		if(index==0) {
+			x = (int)p.charAt(0);
+			switch(x) {
+			case 9824:
+				x = 1;
+				break;
+			case 9827:
+				x = 2;
+				break;
+			case 9825:
+				x = 3;
+				break;
+			case 9671:			
+				x=4;
+				break;
+			}
+		}
+		else if(index ==1) {
+			if(p.substring(index) instanceof String)
+				x = 10;
+			else
+				x= Integer.parseInt(p.substring(index)); 
+		}
+
+		return x;
+	}
+
 	public static void main(String[] args) {
 
 		Set<String> card = cardshuffle();
 		Iterator<String> select = card.iterator();
 		String[][] player = new String[4][5]; //player [n명][카드장수]
+		int[] total = new int[4];
+		int[] num = new int[2];
 		//딜러1 플레이3
 
 		System.out.println(card);		
@@ -47,6 +78,18 @@ public class BlackJack {
 		System.out.println(Arrays.deepToString(player));
 		System.out.println(card);
 		
+		for(int i=0;i<total.length;i++) {
+			
+		}
+		
+		System.out.println(getPattern(player[0][0], 0));
+		System.out.println(getPattern(player[0][0], 1));
+
+		//		System.out.println(Integer.parseInt(player[0][0],0));
+		//		System.out.println(getPattern(player[0][0],0));
+		//		System.out.println(getPattern(player[0][0],1));
+		//		
+
 
 	}//main
 }//class

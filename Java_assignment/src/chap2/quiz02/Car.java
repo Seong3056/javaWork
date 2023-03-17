@@ -2,9 +2,9 @@ package chap2.quiz02;
 
 public class Car {
 	String model;
-	int speed;
-	char mode; //(P, R, N, D)
-	boolean start;
+	private int speed;
+	private char mode; //(P, R, N, D)
+	private boolean start;
 
 	Car(){}
 	Car(String s){
@@ -20,11 +20,8 @@ public class Car {
 					D나 R모드가 아니라면 속도를 지정할 수 없습니다.
 					R모드는 속도를 40 초과해서 지정할 수 없습니다.
 		 */
-		if(start == false) {
-			System.out.println("-----------------------");
-			System.out.println("시동이 걸려있지 않습니다.");
-		}
-		else if(mode == 'N'||mode == 'P') {
+		
+		if(mode == 'N'||mode == 'P') {
 			System.out.println("-----------------------");
 			System.out.println("주행가능한 기어가 아닙니다.");
 			return;
@@ -39,27 +36,45 @@ public class Car {
 			this.speed = speed;
 		}
 		else if(mode == 'R') {
-			if(mode > 40) return;
+			if(speed > 40) {
+				System.out.println("후진은 40이상 낼 수 없습니다.");
+				return;
+			}
 			this.speed = speed;
 		}
 	}
+	public int getSpeed() {
+		return this.speed;
+	}
 	//기본 형태로 지정합니다.
-	public char setMode(char mode) {
+	public void setMode(char mode) {
 		/*
 		 전달받은 변속 모드에 따라 상태를 변경합니다.
 				   지정된 값 이외의 매개값은 P 모드로 통일합니다.
 		 */
 		switch (mode){
 		case 'P':
+			if(this.speed>0) {
+				System.out.println("주행중 변속 불가능한 모드입니다.");
+				break;
+			}
 			this.mode = 'P';
 			break;
 		case 'N':
 			this.mode = 'N';
 			break;
 		case 'D':
+			if(this.speed>0&&this.mode=='R') {
+				System.out.println("주행중 변속 불가능한 모드입니다.");
+				break;
+			}
 			this.mode = 'D';
 			break;
 		case 'R':
+			if(this.speed>0&&this.mode=='D') {
+				System.out.println("주행중 변속 불가능한 모드입니다.");
+				break;
+			}
 			this.mode = 'R';
 			break;
 		default:
@@ -67,10 +82,10 @@ public class Car {
 			break;
 
 		}
-		return this.mode;
+		
 	}
 	public char getMode() {
-		return mode;
+		return this.mode;
 	}
 
 	public void engineStart() {
@@ -144,8 +159,12 @@ public class Car {
 	void isStart(){
 		
 	}
-	void setStart() {
+	void setStart(boolean start) {
 
+		this.start = start;
+	}
+	public boolean getStart() {
+		return this.start;
 	}
 	void carStatus() {
 		System.out.printf("시동여부: %b \n",this.start);

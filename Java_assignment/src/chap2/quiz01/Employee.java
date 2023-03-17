@@ -1,10 +1,10 @@
 package chap2.quiz01;
 
 public class Employee extends Person {
-	String department;
+	private String department;
+	
 	Employee(){
-		name = "박부장";
-		age = "42";
+		super("박부장","43");
 		department = "마케팅";
 	}
 	@Override

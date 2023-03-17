@@ -1,11 +1,10 @@
 package chap2.quiz01;
 
 public class Teacher extends Person {
-	String subject;
+	private String subject;
 
 	Teacher(){
-		name = "홍길동";
-		age = "37";
+		super("박영희","34");
 		subject = "수학";
 	}
 	@Override

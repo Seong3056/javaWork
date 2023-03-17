@@ -1,11 +1,11 @@
 package etc.api.util.random;
 
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;import javax.print.attribute.standard.DateTimeAtCreation;
+import java.util.Set;
 
 public class LottoSimulator {
 
@@ -38,9 +38,9 @@ public class LottoSimulator {
 		int x=0;
 		while(true) {
 			x = r.nextInt(45)+1;
-			if(!(num.contains(x))) break;			 
+			if(!(num.contains(x))) return x;		 
 		}		
-		return x;
+		
 	} 
 	public static void checkLottoNumber(List<Integer> winNum, List<Integer> num, int bonus) {
 		/*
@@ -65,8 +65,10 @@ public class LottoSimulator {
 			prize1++;
 			break;
 		case 5:
-			if(winNum.contains(bonus))	prize2++;
-			else		prize3++;
+			if(winNum.contains(bonus))
+				prize2++;
+			else
+				prize3++;
 			break;
 		case 4:
 			prize4++;
@@ -119,7 +121,7 @@ public class LottoSimulator {
 			p3 = 0;
 			
 		}
-		else if(prize3==0) {
+		else if(prize3==0) { 
 			p1 = (long) (prize*0.875/prize1*1000);
 			p2 = (long) (prize*0.125/prize2*1000);
 			p3 = 0;
