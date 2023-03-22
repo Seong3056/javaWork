@@ -18,23 +18,31 @@ public class MainClass {
 			
 			switch(menu) {
 			case 1:
-				sList.add(p.inputPoints());
-				System.out.println(sList.get(0).getAverage());
+				sList.add(p.inputPoints());				
 				break;
 			case 2:
 				if(sList.isEmpty()) {
 					System.out.println("등록된 학생이 없습니다. 먼저 등록부터 하세요.");
 				} else {
-//					p.showAllPoints(sList);					
+					p.showAllPoints(sList);	
+					double total=0;
+					for(int i =0; i<sList.size();i++) {
+						total += sList.get(i).getAverage();
+					}
+					total /= sList.size();
+					System.out.printf("\n                                       반 평균: %7.2f점\n",total);
 				}
 				break;
 			case 3:
+				p.showPointUI();
 				p.searchPoint(sList);
 				break;
 			case 4:
+				
 				p.modifyPoint(sList);
 				break;
 			case 5:
+				
 				p.deletePoint(sList);
 				break;
 			case 6:

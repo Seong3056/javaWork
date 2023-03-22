@@ -31,11 +31,11 @@ public class Student {
 		this.name = sc.next();
 		while(true) {
 		try {
-			System.out.println("- 국어점수: ");
+			System.out.print("- 국어점수: ");
 			setKor(sc.nextInt());
-			System.out.println("- 영어점수: ");
+			System.out.print("- 영어점수: ");
 			setEng(sc.nextInt());
-			System.out.println("- 수학점수: ");
+			System.out.print("- 수학점수: ");
 			setMath(sc.nextInt());
 			break;
 		} catch (Exception e) {

@@ -48,7 +48,7 @@ public class Point {
 	}
 
 	//2. 전체 학생들의 성적 정보를 출력할 메서드
-	public void showAllPoints(List l) { //학생 객체들이 들어있는 리스트가 와야죠?
+	public void showAllPoints(List<Student> l) { //학생 객체들이 들어있는 리스트가 와야죠?
 
 		/*
 		 1. 리스트 안에 들어있는 학생 객체들의 정보를
@@ -60,9 +60,9 @@ public class Point {
 
 		 3. 우리 반 평균을 가장 아랫부분에 출력해야 합니다.
 		 */
-		Student s = new Student();
+		showPointUI();
 		for(int i=0;i<l.size();i++) {
-			s.outputStuInfo();
+			l.get(i).outputStuInfo();
 		}
 		
 
@@ -81,8 +81,17 @@ public class Point {
 		 2. 찾는 학번이 존재하지 않는다면 검색하지 못했다는
 		  메세지를 출력해 주세요.
 		 */
-		
-		
+		int i=0;
+		for(i=0;i<students.size();i++)			
+			if(stuNum.equals(students.get(i).getStuId()))				
+				break;
+				
+		if(i>students.size()) {
+			System.out.println("등록되지 않은 학생입니다.");
+		}
+		else {
+			students.get(i).outputStuInfo();
+		}
 	}
 	
 	//4. 학생의 개인 성적 정보를 수정하는 메서드
@@ -97,8 +106,33 @@ public class Point {
 		  
 		 - 찾는 학번이 없을 시 검색하지 못했다는 메세지를 출력해 주세요.
 		 */
+		System.out.println("성적을 조회할 학생의 학번을 입력하세요.");
+		System.out.print("> ");
+		String stuNum = sc.next();
 		
-		
+		int i=0;
+		for(i=0;i<students.size();i++)			
+			if(stuNum.equals(students.get(i).getStuId()))				
+				break;
+		if(i>students.size())	System.out.println("등록되지 않은 학생입니다.");
+		else {
+		System.out.println("수정할 점수를 입력하세요.");
+		while(true) {
+			try {
+				sc.nextLine();
+				System.out.print("- 국어점수: ");
+				students.get(i).setKor(sc.nextInt());
+				System.out.print("- 영어점수: ");
+				students.get(i).setEng(sc.nextInt());
+				System.out.print("- 수학점수: ");
+				students.get(i).setMath(sc.nextInt());
+				students.get(i).calcTotAvgGrade();
+				break;
+			} catch (Exception e) {
+				System.out.println("올바르지 않은 입력값입니다. 다시 입력해주세요.");
+			}
+			}
+		}
 		
 	}
 	
@@ -113,6 +147,18 @@ public class Point {
 		  
 		 - 학생이 없다면 없다고도 출력해 주세요.
 		 */
+		System.out.println("삭제할 학생의 학번을 입력하세요.");
+		System.out.print("> ");
+		String stuNum = sc.next();
+		
+		int i=0;
+		for(i=0;i<students.size();i++)			
+			if(stuNum.equals(students.get(i).getStuId()))				
+				break;
+		if(i>students.size())	System.out.println("등록되지 않은 학생입니다.");
+		else {
+			students.remove(i);
+		}
 		
 		
 	}
