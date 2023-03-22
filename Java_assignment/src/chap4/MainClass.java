@@ -19,7 +19,7 @@ public class MainClass {
 			switch(menu) {
 			case 1:
 				sList.add(p.inputPoints());
-				System.out.println((sList.indexOf(0)));
+				System.out.println(sList.get(0).getAverage());
 				break;
 			case 2:
 				if(sList.isEmpty()) {
